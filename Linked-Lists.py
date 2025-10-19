@@ -54,7 +54,7 @@ class LinkedList:
                 current = current.next
 
     def delete(self):
-        target = input("Input a node you want to delete. The first occurance only will be deleted")
+        target = input("Input a node (value) you want to delete. The first occurance only will be deleted: ")
         current = self.head
         if current is None:
             print("The list is empty.")
@@ -68,6 +68,20 @@ class LinkedList:
                     current.next = current.next.next
                     break
                 current = current.next
+
+    def exists(self):
+        target = input("Enter a value to check if it exists in the list: ")
+        current = self.head
+        if current is None:
+            print("The list is empty")
+        else: 
+            while current is not None:
+                if current.data == target:
+                    print("The value " , target, " exists in the list.")
+                    break
+                current = current.next
+            else:
+                print("The value", target, "does not exist in the list.")
 
 prompt = """
 1. Show current list.
@@ -100,6 +114,8 @@ while True:
         l.insert()
     elif choice == "5":
         l.delete()
+    elif choice == "6":
+        l.exists()
     elif choice == "14":
         exit()
     else: 
