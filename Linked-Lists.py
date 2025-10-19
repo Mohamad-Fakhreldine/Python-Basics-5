@@ -7,17 +7,25 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def ShowList(self):
+    def show_list(self):
         current = self.head
         if current is None:
             print("The list is empty")
             return
         else:
-            while current.next != None:
+            while current != None:
                 print(current.data)
                 print("||")
                 current = current.next
-
+    
+    def add_start(self):
+        node_data = input("Enter the value of the first node: ")
+        new_node = Node(node_data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
 
 prompt = """
 1. Show current list.
@@ -41,7 +49,9 @@ while True:
     print(prompt)
     choice = input("Choose an option: ")
     if choice == "1":
-        l.ShowList()
+        l.show_list()
+    elif choice == "2":
+        l.add_start()
     elif choice == "14":
         exit()
     else: 
