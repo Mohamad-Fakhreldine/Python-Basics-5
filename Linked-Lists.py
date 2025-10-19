@@ -37,6 +37,21 @@ class LinkedList:
             while current.next != None:
                 current = current.next
             current.next = new_node
+    
+    def insert(self):
+        target = input("Enter an existing node: ")
+        node_data = input("Enter the value of the node to be inserted after the chosen node: ")
+        new_node = Node(node_data)
+        if self.head is None:
+            print("The list is empty.")
+            return
+        else:
+            current = self.head
+            while current.next != None:
+                if current.data == target:
+                    new_node.next = current.next
+                    current.next = new_node
+                current = current.next
 
 prompt = """
 1. Show current list.
@@ -65,6 +80,8 @@ while True:
         l.add_start()
     elif choice == "3":
         l.add_end()
+    elif choice == "4":
+        l.insert()
     elif choice == "14":
         exit()
     else: 
