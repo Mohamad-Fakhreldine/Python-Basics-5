@@ -26,6 +26,17 @@ class LinkedList:
         else:
             new_node.next = self.head
             self.head = new_node
+    
+    def add_end(self):
+        node_data = input("Enter the value of the last node: ")
+        new_node = Node(node_data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next != None:
+                current = current.next
+            current.next = new_node
 
 prompt = """
 1. Show current list.
@@ -52,6 +63,8 @@ while True:
         l.show_list()
     elif choice == "2":
         l.add_start()
+    elif choice == "3":
+        l.add_end()
     elif choice == "14":
         exit()
     else: 
