@@ -83,6 +83,17 @@ class LinkedList:
             else:
                 print("The value", target, "does not exist in the list.")
 
+    def total_nodes(self):
+        count = 0
+        current = self.head
+        if current is None:
+            print("The total number of nodes is: ", count)
+        else:
+            while current is not None:
+                current = current.next
+                count += 1
+            print("The total number of nodes is: ", count)
+
 prompt = """
 1. Show current list.
 2. Add a new node at the beginning of the list.
@@ -116,6 +127,8 @@ while True:
         l.delete()
     elif choice == "6":
         l.exists()
+    elif choice == "7":
+        l.total_nodes()
     elif choice == "14":
         exit()
     else: 
