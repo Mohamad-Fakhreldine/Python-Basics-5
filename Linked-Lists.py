@@ -7,6 +7,17 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    def ShowList(self):
+        current = self.head
+        if current is None:
+            print("The list is empty")
+            return
+        else:
+            while current.next != None:
+                print(current.data)
+                print("||")
+                current = current.next
+
 
 prompt = """
 1. Show current list.
@@ -24,12 +35,13 @@ prompt = """
 13. Convert the linked list to a regular Python list.
 14. Exit.
 """
+l = LinkedList()
 
 while True:
     print(prompt)
     choice = input("Choose an option: ")
     if choice == "1":
-        print("Not implemented yet")
+        l.ShowList()
     elif choice == "14":
         exit()
     else: 
