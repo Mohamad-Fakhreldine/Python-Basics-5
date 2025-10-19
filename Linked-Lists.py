@@ -53,6 +53,22 @@ class LinkedList:
                     current.next = new_node
                 current = current.next
 
+    def delete(self):
+        target = input("Input a node you want to delete. The first occurance only will be deleted")
+        current = self.head
+        if current is None:
+            print("The list is empty.")
+            return
+        elif current.data == target:
+            self.head = self.head.next
+            return
+        else:
+            while current.next is not None:
+                if current.next.data == target:
+                    current.next = current.next.next
+                    break
+                current = current.next
+
 prompt = """
 1. Show current list.
 2. Add a new node at the beginning of the list.
@@ -82,6 +98,8 @@ while True:
         l.add_end()
     elif choice == "4":
         l.insert()
+    elif choice == "5":
+        l.delete()
     elif choice == "14":
         exit()
     else: 
