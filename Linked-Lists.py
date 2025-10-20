@@ -94,6 +94,17 @@ class LinkedList:
                 count += 1
             print("The total number of nodes is: ", count)
 
+    def reverse(self):
+        current = self.head
+        prev = None
+        while current != None:
+            temp = current.next
+            current.next = prev
+            prev = current 
+            current = temp
+        self.head = prev
+        
+
 prompt = """
 1. Show current list.
 2. Add a new node at the beginning of the list.
@@ -129,6 +140,8 @@ while True:
         l.exists()
     elif choice == "7":
         l.total_nodes()
+    elif choice == "8":
+        l.reverse()
     elif choice == "14":
         exit()
     else: 
