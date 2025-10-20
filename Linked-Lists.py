@@ -119,6 +119,19 @@ class LinkedList:
     def clearing(self):
         self.head = None
 
+    def middle_node(self):
+        count = 0
+        temp = 0
+        current = self.head
+        while current is not None:
+            count += 1
+            current = current.next
+        current = self.head
+        while temp != count//2:
+            temp += 1
+            current = current.next
+        print(current.data)
+
 prompt = """
 1. Show current list.
 2. Add a new node at the beginning of the list.
@@ -162,6 +175,8 @@ while True:
         l.empty()
     elif choice == "11":
         l.clearing()
+    elif choice == "12":
+        l.middle_node()
     elif choice == "14":
         exit()
     else: 
