@@ -116,6 +116,9 @@ class LinkedList:
         else:
             print("The list is not empty.")
 
+    def clearing(self):
+        self.head = None
+
 prompt = """
 1. Show current list.
 2. Add a new node at the beginning of the list.
@@ -157,6 +160,8 @@ while True:
         l.display()
     elif choice == "10":
         l.empty()
+    elif choice == "11":
+        l.clearing()
     elif choice == "14":
         exit()
     else: 
