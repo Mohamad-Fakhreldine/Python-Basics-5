@@ -132,6 +132,14 @@ class LinkedList:
             current = current.next
         print(current.data)
 
+    def convert_list(self):
+        new_list = []
+        current = self.head
+        while current is not None:
+            new_list.append(int(current.data))
+            current = current.next
+        print("Normal list: ", new_list)
+
 prompt = """
 1. Show current list.
 2. Add a new node at the beginning of the list.
@@ -177,6 +185,8 @@ while True:
         l.clearing()
     elif choice == "12":
         l.middle_node()
+    elif choice == "13":
+        l.convert_list()
     elif choice == "14":
         exit()
     else: 
