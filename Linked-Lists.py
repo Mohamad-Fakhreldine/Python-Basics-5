@@ -104,6 +104,11 @@ class LinkedList:
             current = temp
         self.head = prev
         
+    def display(self):
+        current = self.head
+        while current is not None:
+            print("Node: ", current.data, " -> ", end=" ")
+            current = current.next
 
 prompt = """
 1. Show current list.
@@ -142,6 +147,8 @@ while True:
         l.total_nodes()
     elif choice == "8":
         l.reverse()
+    elif choice == "9":
+        l.display()
     elif choice == "14":
         exit()
     else: 
