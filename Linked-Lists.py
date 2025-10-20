@@ -110,6 +110,12 @@ class LinkedList:
             print("Node: ", current.data, " -> ", end=" ")
             current = current.next
 
+    def empty(self):
+        if self.head is None:
+            print("The list is empty.")
+        else:
+            print("The list is not empty.")
+
 prompt = """
 1. Show current list.
 2. Add a new node at the beginning of the list.
@@ -149,6 +155,8 @@ while True:
         l.reverse()
     elif choice == "9":
         l.display()
+    elif choice == "10":
+        l.empty()
     elif choice == "14":
         exit()
     else: 
